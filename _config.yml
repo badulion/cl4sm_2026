@@ -2,7 +2,7 @@
 # Site settings — edit the values marked TBA once they are known.
 # ---------------------------------------------------------------------------
 title: "Constrained Learning for Scientific Modelling"
-short_title: "CL4SciML"
+short_title: "CL4SM"
 description: >-
   An ELLIS session on enforcing physical laws, conservation principles and other
   prior knowledge in machine learning models of scientific and engineering systems.

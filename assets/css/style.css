@@ -100,8 +100,8 @@ p { margin: 0 0 1em; }
     var(--bg);
   border-bottom: 1px solid var(--border);
 }
-.hero__logo { margin: 0 0 1.2rem -14px; line-height: 0; }
-.hero__lockup { display: block; width: 100%; max-width: 620px; height: auto; }
+.hero__logo { margin: 0 0 1.2rem -15px; line-height: 0; }
+.hero__lockup { display: block; width: 100%; max-width: 480px; height: auto; }
 .hero__meta {
   color: var(--accent); font-weight: 600; font-size: .9rem;
   text-transform: uppercase; letter-spacing: .1em; margin-bottom: 1rem;
