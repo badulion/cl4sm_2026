@@ -3,11 +3,11 @@ layout: default
 ---
 
 <section class="hero">
-  <div class="container hero__inner">
-    {% include mark.html class="hero__mark" size="220" alt="CL4SciML logo" %}
-    <div class="hero__text">
-    <p class="hero__eyebrow">{{ site.event.host }} session · {{ site.event.date }}{% if site.event.location != "TBA" %} · {{ site.event.location }}{% endif %}</p>
-    <h1 class="hero__title">{{ site.title }}</h1>
+  <div class="container">
+    <h1 class="hero__logo">
+      {% include logo.html name="cl4sciml-lockup" class="hero__lockup" alt="CL4SciML — Constrained Learning for Scientific Modelling" width="491" height="160" %}
+    </h1>
+    <p class="hero__meta">{{ site.event.date }}{% if site.event.location != "TBA" %} · {{ site.event.location }}{% endif %}</p>
     <p class="hero__lead">
       Machine learning models that fit the data but break the physics: how to build
       learnt models that respect conservation laws, boundary conditions, and other prior knowledge.
@@ -17,7 +17,6 @@ layout: default
       {% if site.submission.url != "" %}
         <a class="btn" href="{{ site.submission.url }}">Submit via CMT</a>
       {% endif %}
-    </div>
     </div>
   </div>
 </section>

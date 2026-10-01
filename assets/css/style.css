@@ -67,9 +67,8 @@ p { margin: 0 0 1em; }
 }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
 .nav__brand { display: flex; align-items: center; gap: .6rem; color: var(--text); text-decoration: none; }
-.nav__mark { display: block; width: 32px; height: 32px; }
-.wordmark { font-family: var(--font-serif); font-weight: 700; font-size: 1.25rem; letter-spacing: -.01em; }
-.wordmark__4 { color: var(--accent); }
+.nav__mark { display: block; width: 34px; height: 34px; }
+.nav__wordmark { display: block; height: 26px; width: auto; }
 .nav__links { display: flex; gap: 1.4rem; }
 .nav__links a { color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 500; }
 .nav__links a:hover { color: var(--accent); }
@@ -101,16 +100,11 @@ p { margin: 0 0 1em; }
     var(--bg);
   border-bottom: 1px solid var(--border);
 }
-.hero__inner { display: flex; align-items: center; gap: 3.5rem; }
-.hero__mark { display: block; width: 220px; height: 220px; flex-shrink: 0; }
-.hero__text { min-width: 0; }
-.hero__eyebrow {
-  color: var(--accent); font-weight: 600; font-size: .85rem;
+.hero__logo { margin: 0 0 1.2rem -14px; line-height: 0; }
+.hero__lockup { display: block; width: 100%; max-width: 620px; height: auto; }
+.hero__meta {
+  color: var(--accent); font-weight: 600; font-size: .9rem;
   text-transform: uppercase; letter-spacing: .1em; margin-bottom: 1rem;
-}
-.hero__title {
-  font-family: var(--font-serif); font-weight: 700;
-  font-size: clamp(2.2rem, 5.5vw, 3.8rem); max-width: 20ch; margin-bottom: 1.2rem;
 }
 .hero__lead { font-size: 1.2rem; color: var(--muted); max-width: 60ch; margin-bottom: 2rem; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: .8rem; }
@@ -208,16 +202,17 @@ p { margin: 0 0 1em; }
 .footer__ack { max-width: 780px; }
 .footer__meta { margin: 0; }
 
-@media (max-width: 800px) {
-  .hero__inner { flex-direction: column; align-items: flex-start; gap: 1.8rem; }
-  .hero__mark { width: 120px; height: 120px; }
-}
-
 @media (max-width: 600px) {
   body { font-size: 16px; }
   .hero { padding: 3rem 0 3.5rem; }
+  .hero__logo { margin-left: -6px; }
   .section { padding: 3.2rem 0; }
   h2 { font-size: 1.65rem; }
   .people, .pc { grid-template-columns: 1fr; }
   .schedule__time { width: auto; }
+}
+
+/* The dark lockup carries its own solid background, so keep the hero flat. */
+@media (prefers-color-scheme: dark) {
+  .hero { background: var(--bg); }
 }
