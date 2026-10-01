@@ -1,5 +1,7 @@
-- name: Olga Fink
-  affiliation: Intelligent Maintenance and Operations Systems, EPFL, Switzerland
-  role: Keynote speaker
-  url: https://people.epfl.ch/olga.fink
-  photo: ""   # e.g. assets/img/fink.jpg
+# Keynote speaker to be announced. To show one, delete the [] line and uncomment the entry below.
+[]
+# - name: Olga Fink
+#   affiliation: Intelligent Maintenance and Operations Systems, EPFL, Switzerland
+#   role: Keynote speaker
+#   url: https://people.epfl.ch/olga.fink
+#   photo: ""   # e.g. assets/img/fink.jpg

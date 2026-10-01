@@ -150,6 +150,7 @@ layout: default
     <div class="people people--speakers">
       {% for p in site.data.speakers %}{% include person.html person=p %}{% endfor %}
     </div>
+    {% if site.data.speakers.size == 0 %}<p class="muted">The keynote speaker will be announced soon.</p>{% endif %}
   </div>
 </section>
 
