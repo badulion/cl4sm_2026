@@ -1,5 +1,5 @@
-{%- comment -%} Light/dark logo image. Params: name (file stem in assets/img/logo), class, alt, width, height. {%- endcomment -%}
+{%- comment -%} Light/dark logo image. Params: name (file stem in logos/), class, alt, width, height. {%- endcomment -%}
 <picture>
-  <source srcset="{{ '/assets/img/logo/' | append: include.name | append: '-dark.svg' | relative_url }}" media="(prefers-color-scheme: dark)">
-  <img class="{{ include.class }}" src="{{ '/assets/img/logo/' | append: include.name | append: '.svg' | relative_url }}" alt="{{ include.alt | default: '' }}" width="{{ include.width }}" height="{{ include.height }}">
+  <source srcset="{{ '/logos/' | append: include.name | append: '-dark.svg' | relative_url }}" media="(prefers-color-scheme: dark)">
+  <img class="{{ include.class }}" src="{{ '/logos/' | append: include.name | append: '.svg' | relative_url }}" alt="{{ include.alt | default: '' }}" width="{{ include.width }}" height="{{ include.height }}">
 </picture>
