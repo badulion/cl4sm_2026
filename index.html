@@ -3,7 +3,9 @@ layout: default
 ---
 
 <section class="hero">
-  <div class="container">
+  <div class="container hero__inner">
+    {% include mark.html class="hero__mark" size="220" alt="CL4SciML logo" %}
+    <div class="hero__text">
     <p class="hero__eyebrow">{{ site.event.host }} session · {{ site.event.date }}{% if site.event.location != "TBA" %} · {{ site.event.location }}{% endif %}</p>
     <h1 class="hero__title">{{ site.title }}</h1>
     <p class="hero__lead">
@@ -15,6 +17,7 @@ layout: default
       {% if site.submission.url != "" %}
         <a class="btn" href="{{ site.submission.url }}">Submit via CMT</a>
       {% endif %}
+    </div>
     </div>
   </div>
 </section>
