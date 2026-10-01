@@ -1,0 +1,23 @@
+# `start` is minutes after the session begins.
+- start: 0
+  duration: 5
+  activity: Opening remarks by the organisers
+- start: 5
+  duration: 30
+  activity: "Invited keynote: Olga Fink"
+  detail: 25 min talk + 5 min Q&A
+  keynote: true
+- start: 35
+  duration: 60
+  activity: Contributed talks
+  detail: 6 × 10 min (8 min + 2 min Q&A)
+- start: 95
+  duration: 15
+  activity: Lightning poster & demo pitches
+  detail: 5–7 × 2 min
+- start: 110
+  duration: 10
+  activity: Open discussion & invitation to the poster session
+- start: 120
+  activity: Poster & demo session
+  detail: End of the day

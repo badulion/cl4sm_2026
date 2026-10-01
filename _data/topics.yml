@@ -1,0 +1,19 @@
+- title: Soft constraint enforcement
+  text: Penalty and augmented-loss formulations, and their optimisation pathologies.
+- title: Hard enforcement by construction
+  text: Conservation-by-design, structure-preserving architectures, monotone/positive/convex parametrisations.
+- title: Projection & correction
+  text: Projection and correction methods, differentiable optimisation layers, and multi-stage training schemes.
+- title: Constraints from governing equations
+  text: Conservation laws, symmetries, boundary and initial conditions, thermodynamic consistency.
+- title: Stability & safety
+  text: Stability and safety of learned dynamical models; invariant sets, certified behaviour for safety-critical deployment.
+- title: Probabilistic constraints
+  text: Constrained generative models, calibrated and physically consistent uncertainty quantification.
+- title: Guarantees vs. accuracy vs. cost
+  text: Theory, benchmarks, and rigorous comparisons across enforcement strategies.
+- title: Applications in science & engineering
+  text: >-
+    Climate and environment (conservation-constrained emulators, physically consistent downscaling),
+    fluids and engineering (thermodynamically consistent constitutive models, stable surrogates),
+    and energy and industrial systems (power grids, batteries, cyber-physical systems).

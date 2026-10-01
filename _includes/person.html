@@ -1,0 +1,18 @@
+{% assign p = include.person %}
+{% assign parts = p.name | split: " " %}
+{% assign first = parts | first | slice: 0 %}
+{% assign last = parts | last | slice: 0 %}
+<div class="person">
+  {% if p.photo and p.photo != "" %}
+    <img class="person__photo" src="{{ p.photo | relative_url }}" alt="{{ p.name }}" loading="lazy">
+  {% else %}
+    <div class="person__photo person__photo--initials" aria-hidden="true">{{ first }}{{ last }}</div>
+  {% endif %}
+  <div class="person__body">
+    {% if p.role %}<div class="person__role">{{ p.role }}</div>{% endif %}
+    <h3 class="person__name">
+      {% if p.url and p.url != "" %}<a href="{{ p.url }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}
+    </h3>
+    <p class="person__aff">{{ p.affiliation }}</p>
+  </div>
+</div>

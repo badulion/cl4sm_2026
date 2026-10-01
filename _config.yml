@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------------------
+# Site settings — edit the values marked TBA once they are known.
+# ---------------------------------------------------------------------------
+title: "Constrained Learning for Scientific Modelling"
+short_title: "CL4SciML"
+description: >-
+  An ELLIS session on enforcing physical laws, conservation principles and other
+  prior knowledge in machine learning models of scientific and engineering systems.
+
+# For a project page (https://<user>.github.io/<repo>/) set baseurl to "/<repo>".
+url: "https://badulion.github.io"
+baseurl: "/cl4sm_2026"
+
+# Event details
+event:
+  host: "ELLIS"                 # e.g. "ELLIS UnConference 2026" — TBA
+  date: "December 8, 2026"
+  location: "TBA"               # city / venue
+  start_time: ""                # local session start, "HH:MM" (e.g. "14:00"); empty = show relative times
+
+# Submission
+submission:
+  platform: "Microsoft CMT"
+  url: ""                       # CMT submission link — empty shows "TBA"
+  template_url: ""              # LaTeX template link — empty hides the button
+  page_limit: "2 pages (including references)"
+
+contact_email: ""               # shown in the footer if set
+
+# Build
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - "*.pdf"
+  - vendor

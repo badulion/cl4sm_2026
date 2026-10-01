@@ -1,0 +1,170 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="container">
+    <p class="hero__eyebrow">{{ site.event.host }} session · {{ site.event.date }}{% if site.event.location != "TBA" %} · {{ site.event.location }}{% endif %}</p>
+    <h1 class="hero__title">{{ site.title }}</h1>
+    <p class="hero__lead">
+      Machine learning models that fit the data but break the physics: how to build
+      learnt models that respect conservation laws, boundary conditions, and other prior knowledge.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#call">Call for Contributions</a>
+      {% if site.submission.url != "" %}
+        <a class="btn" href="{{ site.submission.url }}">Submit via CMT</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container narrow">
+    <h2>About</h2>
+    <p>
+      Machine learning methods have been increasingly used to model, simulate, and forecast scientific
+      and engineering systems due to their performance and lower computational costs. However, even when
+      a model has a good fit to the data it can be scientifically wrong: creating or destroying mass and
+      energy, producing negative concentrations, violating boundary conditions, or drifting into unphysical
+      regimes over predictions outside the training time horizon. These violations compromise the trust in
+      a learnt model, hindering its adoption in simulation pipelines, digital twins, or decision making.
+    </p>
+    <p>
+      The problem of incorporating prior knowledge or constraints into these methods has sparked interest in
+      the literature, and different approaches exist: soft penalty terms, projection, correction and
+      differentiable optimisation layers, and hard architectural guarantees. However, several limitations
+      exist when choosing between them, at a cost in accuracy, training stability, and compute.
+    </p>
+    <p>
+      In this session, we promote discussion across machine learning methods, from new approaches to
+      successful applications in real-world systems. The focus is on promoting <strong>transparency,
+      trust, and security</strong> in machine learning methods.
+    </p>
+  </div>
+</section>
+
+<section id="topics" class="section section--alt">
+  <div class="container">
+    <h2>Topics of Interest</h2>
+    <div class="cards">
+      {% for topic in site.data.topics %}
+      <div class="card">
+        <h3>{{ topic.title }}</h3>
+        <p>{{ topic.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="call" class="section">
+  <div class="container narrow">
+    <h2>Call for Contributions</h2>
+    <p>We invite <strong>{{ site.submission.page_limit }}</strong> submissions in three categories:</p>
+    <ol class="tracks">
+      <li>
+        <h3>Extended abstracts on ongoing work</h3>
+        <p>For oral presentation (8 min + 2 min Q&amp;A) and poster.</p>
+      </li>
+      <li>
+        <h3>Extended abstracts of recently published papers</h3>
+        <p>
+          Papers recently published at top-tier conferences and journals such as JMLR, JAIR, MLJ, PAMI,
+          IJCAI, NeurIPS, ICLR, AISTATS and ICML. For oral presentation (8 min + 2 min Q&amp;A) and poster.
+        </p>
+      </li>
+      <li>
+        <h3>Tutorials, demos, libraries &amp; datasets</h3>
+        <p>
+          Descriptions of interactive tutorials/demos (such as Jupyter notebooks), libraries/packages or
+          datasets showcasing the implementation of papers, architectures, relevant software libraries or
+          datasets. For a demo pitch (2 min) and presentation during the poster session.
+        </p>
+      </li>
+    </ol>
+
+    <h3>Review process</h3>
+    <p>
+      Submissions are reviewed single-blind by the Program Committee, with at least two reviews
+      and one meta-review per submission.
+    </p>
+
+    <h3>How to submit</h3>
+    <p>
+      Submissions are handled through {{ site.submission.platform }}.
+      {% if site.submission.url != "" %}
+        <a href="{{ site.submission.url }}">Submit your contribution here.</a>
+      {% else %}
+        The submission link will be announced here soon.
+      {% endif %}
+    </p>
+    {% if site.submission.template_url != "" %}
+      <p><a class="btn" href="{{ site.submission.template_url }}">Download the template</a></p>
+    {% endif %}
+  </div>
+</section>
+
+<section id="dates" class="section section--alt">
+  <div class="container narrow">
+    <h2>Important Dates</h2>
+    <ul class="timeline">
+      {% for d in site.data.dates %}
+      <li class="timeline__item{% if d.highlight %} timeline__item--highlight{% endif %}">
+        <span class="timeline__date">{% if d.date and d.date != "" %}{{ d.date }}{% else %}{{ d.approx }} <span class="tba">(exact date TBA)</span>{% endif %}</span>
+        <span class="timeline__event">{{ d.event }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="schedule" class="section">
+  <div class="container narrow">
+    <h2>Schedule</h2>
+    <p class="muted">
+      {{ site.event.date }}{% if site.event.start_time == "" %}. The start time will be announced; times below are relative to the start of the session{% endif %}.
+    </p>
+    <table class="schedule">
+      <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+      <tbody>
+        {% for s in site.data.schedule %}
+        <tr{% if s.keynote %} class="schedule__keynote"{% endif %}>
+          <td class="schedule__time">
+            {% include clock.html min=s.start %}{% if s.duration %}–{% assign end = s.start | plus: s.duration %}{% include clock.html min=end %}{% endif %}
+          </td>
+          <td>
+            <div class="schedule__activity">{{ s.activity }}</div>
+            {% if s.detail %}<div class="schedule__detail">{{ s.detail }}</div>{% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="speakers" class="section section--alt">
+  <div class="container">
+    <h2>Invited Speaker</h2>
+    <div class="people people--speakers">
+      {% for p in site.data.speakers %}{% include person.html person=p %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="organizers" class="section">
+  <div class="container">
+    <h2>Organisers</h2>
+    <div class="people">
+      {% for p in site.data.organizers %}{% include person.html person=p %}{% endfor %}
+    </div>
+
+    <h2 id="pc" class="pc-heading">Program Committee</h2>
+    <ul class="pc">
+      {% for m in site.data.pc %}
+      <li><span class="pc__name">{{ m.name }}</span><span class="pc__aff">{{ m.affiliation }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

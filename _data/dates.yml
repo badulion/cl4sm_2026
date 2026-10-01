@@ -1,0 +1,15 @@
+# Set `date` when fixed; until then `approx` is shown.
+- event: Call for contributions
+  date: "October 2026"
+- event: Submission deadline
+  date: ""
+  approx: "Late October 2026"
+- event: Notification to authors
+  date: ""
+  approx: "Mid-November 2026"
+- event: Final programme
+  date: ""
+  approx: "Late November 2026"
+- event: Session
+  date: "December 8, 2026"
+  highlight: true

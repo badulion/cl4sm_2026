@@ -1,0 +1,12 @@
+{%- comment -%} Formats include.min (minutes after session start) as a clock time, or relative h:mm if no start time is set. {%- endcomment -%}
+{%- assign t = include.min | plus: 0 -%}
+{%- if site.event.start_time and site.event.start_time != "" -%}
+  {%- assign hm = site.event.start_time | split: ":" -%}
+  {%- assign t = hm[0] | plus: 0 | times: 60 | plus: hm[1] | plus: t -%}
+  {%- assign h = t | divided_by: 60 | modulo: 24 -%}
+  {%- assign hh = h | prepend: "0" | slice: -2, 2 -%}
+{%- else -%}
+  {%- assign hh = t | divided_by: 60 -%}
+{%- endif -%}
+{%- assign mm = t | modulo: 60 | prepend: "0" | slice: -2, 2 -%}
+{{- hh }}:{{ mm -}}
