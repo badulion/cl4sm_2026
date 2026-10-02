@@ -1,6 +1,6 @@
 # Set `date` when fixed; until then `approx` is shown.
 - event: Call for contributions
-  date: "October 2026"
+  date: "October 1, 2026"
 - event: Submission deadline
   date: "October 30, 2026"
   approx: "Late October 2026"

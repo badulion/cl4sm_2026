@@ -42,6 +42,32 @@
     document.querySelectorAll('.nav__links a').forEach(function (a) {
       a.addEventListener('click', function () { document.getElementById('nav-toggle').checked = false; });
     });
+
+    // Timeline progress: fill passed dates and grow the line up to today.
+    (function () {
+      var items = Array.prototype.slice.call(document.querySelectorAll('.timeline__item'));
+      if (!items.length) return;
+      var DAY = 864e5, now = Date.now();
+      // A date counts as passed once its day is over.
+      var t = items.map(function (li) { return li.dataset.date ? Date.parse(li.dataset.date) + DAY : NaN; });
+      // Undated entries sit halfway between their dated neighbours.
+      t = t.map(function (v, i) {
+        if (!isNaN(v)) return v;
+        var a = i, b = i;
+        while (a >= 0 && isNaN(t[a])) a--;
+        while (b < t.length && isNaN(t[b])) b++;
+        if (a < 0 || b >= t.length) return NaN;
+        return t[a] + (t[b] - t[a]) * (i - a) / (b - a);
+      });
+      items.forEach(function (li, i) {
+        if (now >= t[i]) li.classList.add('timeline__item--passed');
+        if (i + 1 < items.length) {
+          var f = (now - t[i]) / (t[i + 1] - t[i]);
+          f = isNaN(f) ? 0 : Math.max(0, Math.min(1, f));
+          li.style.setProperty('--fill', (f * 100) + '%');
+        }
+      });
+    })();
   </script>
 </body>
 </html>

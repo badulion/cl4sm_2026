@@ -112,7 +112,7 @@ layout: default
     <h2>Important Dates</h2>
     <ul class="timeline">
       {% for d in site.data.dates %}
-      <li class="timeline__item{% if d.highlight %} timeline__item--highlight{% endif %}">
+      <li class="timeline__item{% if d.highlight %} timeline__item--highlight{% endif %}"{% if d.date and d.date != "" %} data-date="{{ d.date | date: "%Y-%m-%d" }}"{% endif %}>
         <span class="timeline__date">{% if d.date and d.date != "" %}{{ d.date }}{% else %}{{ d.approx }} <span class="tba">(exact date TBA)</span>{% endif %}</span>
         <span class="timeline__event">{{ d.event }}</span>
       </li>

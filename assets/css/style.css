@@ -146,13 +146,23 @@ p { margin: 0 0 1em; }
 .tracks p { color: var(--muted); margin: 0; }
 
 /* Timeline */
-.timeline { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--border); }
+.timeline { list-style: none; padding: 0 0 0 2px; margin: 0; }
 .timeline__item { position: relative; padding: 0 0 1.6rem 1.6rem; }
 .timeline__item::before {
-  content: ""; position: absolute; left: -7px; top: .45rem;
+  content: ""; position: absolute; left: -7px; top: .45rem; z-index: 1;
   width: 12px; height: 12px; border-radius: 50%; background: var(--bg-alt); border: 2px solid var(--accent);
 }
-.timeline__item--highlight::before { background: var(--accent); }
+/* Segment from this dot to the next one: thin base line, thick accent fill up to --fill. */
+.timeline__item:not(:last-child)::after {
+  content: ""; position: absolute; left: -3px; top: calc(.45rem + 6px);
+  width: 4px; height: 100%;
+  background:
+    linear-gradient(var(--accent), var(--accent)) top / 100% var(--fill, 0%) no-repeat,
+    linear-gradient(var(--border), var(--border)) center / 2px 100% no-repeat;
+}
+.timeline__item--highlight::before { width: 16px; height: 16px; left: -9px; top: calc(.45rem - 2px); box-shadow: 0 0 0 4px var(--accent-soft); }
+.timeline__item--passed::before { background: var(--accent); }
+.timeline__item--passed .timeline__event { color: var(--text); }
 .timeline__date { display: block; font-weight: 600; }
 .timeline__event { color: var(--muted); }
 
