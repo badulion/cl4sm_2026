@@ -1,24 +1,34 @@
 - name: Cecília Coelho
   affiliation: Institute for Artificial Intelligence (HSU-AI), Helmut Schmidt University, Hamburg, Germany
-  photo: ""
+  photo: assets/img/organizers/coelho.jpeg
+  photo_zoom: 1.3         # enlarge around photo_focus so faces have similar size
+  photo_focus: 48% 38%
   url: ""
 - name: Andrzej Dulny
   affiliation: Chair of Data Science, University of Würzburg, Germany
-  photo: ""
+  photo: assets/img/organizers/dulny.jpeg
+  photo_zoom: 1.4
+  photo_focus: 55% 38%
   url: ""
 - name: Fernanda Costa
   affiliation: Centre of Mathematics, University of Minho, Portugal
-  photo: ""
+  photo: assets/img/organizers/costa.jpg
   url: ""
 - name: Ricardo Baptista
   affiliation: Department of Statistical Sciences and Vector Institute, University of Toronto, Canada
-  photo: ""
+  photo: assets/img/organizers/baptista.jpg
+  photo_zoom: 1.3
+  photo_focus: 48% 37%
   url: ""
 - name: Luís Ferrás
   affiliation: Department of Mechanical Engineering, University of Porto, Portugal
-  photo: ""
+  photo: assets/img/organizers/ferras.png
+  photo_zoom: 1.2
+  photo_focus: 47% 48%
   url: ""
 - name: Oliver Niggemann
   affiliation: Institute for Artificial Intelligence (HSU-AI), Helmut Schmidt University, Hamburg, Germany
-  photo: ""
+  photo: assets/img/organizers/niggemann.jpg
+  photo_zoom: 1.1
+  photo_focus: 48% 40%
   url: ""

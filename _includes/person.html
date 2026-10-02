@@ -4,7 +4,9 @@
 {% assign last = parts | last | slice: 0 %}
 <div class="person">
   {% if p.photo and p.photo != "" %}
-    <img class="person__photo" src="{{ p.photo | relative_url }}" alt="{{ p.name }}" loading="lazy">
+    <div class="person__photo person__photo--img">
+      <img src="{{ p.photo | relative_url }}" alt="{{ p.name }}" loading="lazy"{% if p.photo_zoom %} style="transform: scale({{ p.photo_zoom }}); transform-origin: {{ p.photo_focus | default: '50% 50%' }}"{% endif %}>
+    </div>
   {% else %}
     <div class="person__photo person__photo--initials" aria-hidden="true">{{ first }}{{ last }}</div>
   {% endif %}
