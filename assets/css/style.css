@@ -13,6 +13,10 @@
   --radius: 10px;
   --logo-bg: #ffffff;           /* logo strip is white in both themes */
   --logo-muted: #5b6776;
+  --tl-track: #dfe5ea;
+  --tl-future: #c4ccd4;
+  --tl-faint: #9aa4b0;
+  --tl-halo: rgba(15, 110, 114, .25);
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-serif: "Source Serif 4", Georgia, serif;
 }
@@ -31,6 +35,10 @@
     --on-accent: #0b1215;
     --shadow: none;
     --logo-bg: #ffffff;
+    --tl-track: #2a3440;
+    --tl-future: #4a5663;
+    --tl-faint: #6f7b89;
+    --tl-halo: rgba(79, 185, 188, .3);
   }
 }
 
@@ -149,25 +157,36 @@ p { margin: 0 0 1em; }
 .tracks p { color: var(--muted); margin: 0; }
 
 /* Timeline */
-.timeline { list-style: none; padding: 0 0 0 2px; margin: 0; }
-.timeline__item { position: relative; padding: 0 0 1.6rem 1.6rem; }
-.timeline__item::before {
-  content: ""; position: absolute; left: -7px; top: .45rem; z-index: 1;
-  width: 12px; height: 12px; border-radius: 50%; background: var(--bg-alt); border: 2px solid var(--accent);
-}
-/* Segment from this dot to the next one: thin base line, thick accent fill up to --fill. */
-.timeline__item:not(:last-child)::after {
-  content: ""; position: absolute; left: -3px; top: calc(.45rem + 6px);
-  width: 4px; height: 100%;
-  background:
-    linear-gradient(var(--accent), var(--accent)) top / 100% var(--fill, 0%) no-repeat,
-    linear-gradient(var(--border), var(--border)) center / 2px 100% no-repeat;
-}
-.timeline__item--highlight::before { width: 16px; height: 16px; left: -9px; top: calc(.45rem - 2px); box-shadow: 0 0 0 4px var(--accent-soft); }
-.timeline__item--passed::before { background: var(--accent); }
-.timeline__item--passed .timeline__event { color: var(--text); }
-.timeline__date { display: block; font-weight: 600; }
-.timeline__event { color: var(--muted); }
+/* Important dates: milestones joined by named stretches; the current stretch fills with elapsed time. */
+.tl { list-style: none; margin: 0; padding: 0; }
+.tl__row, .tl__seg { display: grid; grid-template-columns: 24px minmax(0, 1fr); column-gap: 16px; }
+.tl__row { align-items: center; }
+.tl__dot { justify-self: center; width: 14px; height: 14px; border-radius: 50%; background: var(--surface); border: 3px solid var(--tl-future); }
+.tl__text { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 10px; }
+.tl__date { font-size: 15px; font-weight: 700; color: var(--muted); white-space: nowrap; }
+.tl__tz { font-size: 12px; font-weight: 500; color: var(--muted); }
+.tl__label { font-size: 14px; font-weight: 500; color: var(--tl-faint); }
+.tl__item--passed .tl__dot { background: var(--accent); border-color: var(--accent); }
+.tl__item--passed .tl__date { color: var(--text); }
+.tl__item--passed .tl__label { color: var(--muted); }
+.tl__item--next .tl__dot { width: 18px; height: 18px; border-color: var(--text); }
+.tl__item--next .tl__date, .tl__item--next .tl__label { color: var(--text); }
+.tl__item--next .tl__label { font-weight: 700; }
+
+.tl__seg { min-height: 96px; }
+.tl__rail { position: relative; display: flex; justify-content: center; margin: 4px 0; }
+.tl__track { width: 4px; border-radius: 3px; background: var(--tl-track); overflow: hidden; }
+.tl__fill { height: var(--f, 0%); background: var(--accent); }
+.tl__now { display: none; position: absolute; top: var(--f, 0%); left: 50%; transform: translate(-50%, -50%);
+  width: 12px; height: 12px; border-radius: 50%; background: var(--text);
+  box-shadow: 0 0 0 4px var(--bg-alt), 0 0 0 6px var(--tl-halo); }
+.tl__segtext { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 8px; padding: 10px 0; }
+.tl__phase { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--tl-faint); }
+.tl__today { display: none; font-size: 12px; font-weight: 600; background: var(--text); color: var(--bg-alt); padding: 4px 10px; border-radius: 999px; }
+.tl__seg--past .tl__phase { color: var(--muted); }
+.tl__seg--current .tl__track { width: 6px; }
+.tl__seg--current .tl__now, .tl__seg--current .tl__today { display: block; }
+.tl__seg--current .tl__phase { color: var(--accent); font-weight: 700; }
 
 /* Schedule */
 .schedule { width: 100%; border-collapse: collapse; margin-top: 1rem; }

@@ -44,14 +44,16 @@
       a.addEventListener('click', function () { document.getElementById('nav-toggle').checked = false; });
     });
 
-    // Timeline progress: fill passed dates; the line runs to halfway towards the next date.
+    // Important dates: mark passed and next milestones; fill the current stretch by elapsed time.
     (function () {
-      var items = Array.prototype.slice.call(document.querySelectorAll('.timeline__item'));
+      var items = Array.prototype.slice.call(document.querySelectorAll('.tl__item'));
       if (!items.length) return;
       var DAY = 864e5, now = Date.now();
-      // A date counts as passed once its day is over.
-      var t = items.map(function (li) { return li.dataset.date ? Date.parse(li.dataset.date) + DAY : NaN; });
-      // Undated entries sit halfway between their dated neighbours.
+      // The first milestone counts from the start of its day, the others once their day is over.
+      var t = items.map(function (li, i) {
+        return li.dataset.date ? Date.parse(li.dataset.date) + (i === 0 ? 0 : DAY) : NaN;
+      });
+      // Undated entries sit evenly between their dated neighbours.
       t = t.map(function (v, i) {
         if (!isNaN(v)) return v;
         var a = i, b = i;
@@ -60,11 +62,24 @@
         if (a < 0 || b >= t.length) return NaN;
         return t[a] + (t[b] - t[a]) * (i - a) / (b - a);
       });
-      var passed = t.map(function (v) { return now >= v; });
+      var next = t.findIndex(function (v) { return now < v; });
+      var days = function (n) { return n + (n === 1 ? ' day' : ' days'); };
       items.forEach(function (li, i) {
-        if (passed[i]) li.classList.add('timeline__item--passed');
-        var f = passed[i + 1] ? 100 : passed[i] ? 50 : 0;
-        li.style.setProperty('--fill', f + '%');
+        if (now >= t[i]) li.classList.add('tl__item--passed');
+        if (i === next) li.classList.add('tl__item--next');
+        var seg = li.querySelector('.tl__seg');
+        if (!seg) return;
+        var a = t[i], b = t[i + 1];
+        if (isNaN(a) || isNaN(b)) return;
+        var state = now < a ? 'future' : now >= b ? 'past' : 'current';
+        var f = state === 'past' ? 1 : state === 'future' ? 0 : (now - a) / (b - a);
+        seg.classList.add('tl__seg--' + state);
+        seg.style.setProperty('--f', (f * 100).toFixed(2) + '%');
+        if (state === 'current') {
+          var left = Math.max(1, Math.ceil((b - now) / DAY));
+          seg.querySelector('.tl__today').textContent =
+            'Today · ' + days(left) + ' to ' + items[i + 1].dataset.event.toLowerCase();
+        }
       });
     })();
   </script>

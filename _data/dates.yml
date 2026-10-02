@@ -1,15 +1,19 @@
 # Set `date` when fixed; until then `approx` is shown.
+# `phase` names the stretch from this date to the next one.
 - event: Call for contributions
   date: "October 1, 2026"
+  phase: Submissions open
 - event: Submission deadline
   date: "October 30, 2026"
   tz: "AoE"
   approx: "Late October 2026"
+  phase: Under review
 - event: Notification to authors
   date: "November 12, 2026"
   approx: "Mid-November 2026"
+  phase: Programme assembly
 - event: Final programme
   date: "November 27, 2026"
+  phase: Countdown to session
 - event: Session
   date: "December 8, 2026"
-  highlight: true

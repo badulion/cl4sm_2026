@@ -122,14 +122,32 @@ layout: default
 <section id="dates" class="section section--alt">
   <div class="container narrow">
     <h2>Important Dates</h2>
-    <ul class="timeline">
+    <ol class="tl">
       {% for d in site.data.dates %}
-      <li class="timeline__item{% if d.highlight %} timeline__item--highlight{% endif %}"{% if d.date and d.date != "" %} data-date="{{ d.date | date: "%Y-%m-%d" }}"{% endif %}>
-        <span class="timeline__date">{% if d.date and d.date != "" %}{{ d.date }}{% if d.tz %} <span class="tba">({{ d.tz }})</span>{% endif %}{% else %}{{ d.approx }} <span class="tba">(exact date TBA)</span>{% endif %}</span>
-        <span class="timeline__event">{{ d.event }}</span>
+      {% assign dated = false %}{% if d.date and d.date != "" %}{% assign dated = true %}{% endif %}
+      <li class="tl__item"{% if dated %} data-date="{{ d.date | date: "%Y-%m-%d" }}"{% endif %} data-event="{{ d.event }}">
+        <div class="tl__row">
+          <span class="tl__dot" aria-hidden="true"></span>
+          <div class="tl__text">
+            <span class="tl__date">{% if dated %}{{ d.date | date: "%b %-d" }}{% if d.tz %} <span class="tl__tz">{{ d.tz }}</span>{% endif %}{% else %}{{ d.approx }}{% endif %}</span>
+            <span class="tl__label">{{ d.event }}</span>
+          </div>
+        </div>
+        {% unless forloop.last %}
+        <div class="tl__seg">
+          <div class="tl__rail" aria-hidden="true">
+            <div class="tl__track"><div class="tl__fill"></div></div>
+            <span class="tl__now"></span>
+          </div>
+          <div class="tl__segtext">
+            <span class="tl__phase">{{ d.phase }}</span>
+            <span class="tl__today"></span>
+          </div>
+        </div>
+        {% endunless %}
       </li>
       {% endfor %}
-    </ul>
+    </ol>
   </div>
 </section>
 
