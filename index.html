@@ -63,38 +63,56 @@ layout: default
 <section id="call" class="section">
   <div class="container narrow">
     <h2>Call for Contributions</h2>
-    <p>We invite <strong>{{ site.submission.page_limit }}</strong> submissions in three categories:</p>
+    <p>
+      We invite submissions on all aspects of constrained learning for scientific modelling: methods that
+      enforce conservation laws, symmetries, boundary conditions, stability, or other prior knowledge in
+      machine learning models, theory and benchmarks that compare enforcement strategies, and applications
+      in science and engineering. We welcome work from machine learning, applied mathematics, optimisation,
+      and the natural and engineering sciences.
+    </p>
+    <p>
+      All submissions are limited to <strong>{{ site.submission.page_limit }}</strong>, and can fall into
+      one of three categories:
+    </p>
     <ol class="tracks">
       <li>
         <h3>Extended abstracts on ongoing work</h3>
-        <p>For oral presentation (8 min + 2 min Q&amp;A) and poster.</p>
+        <p>
+          New methods, theoretical results, benchmarks, or applications that are still in progress.
+          Early-stage ideas and negative results that shed light on the trade-offs between accuracy,
+          guarantees, and cost are explicitly welcome. Accepted abstracts are presented as a talk
+          (8 min + 2 min Q&amp;A) and a poster.
+        </p>
       </li>
       <li>
         <h3>Extended abstracts of recently published papers</h3>
         <p>
-          Papers recently published at top-tier conferences and journals such as JMLR, JAIR, MLJ, PAMI,
-          IJCAI, NeurIPS, ICLR, AISTATS and ICML. For oral presentation (8 min + 2 min Q&amp;A) and poster.
+          Summaries of work recently published at top-tier conferences and journals such as JMLR, JAIR,
+          MLJ, PAMI, IJCAI, NeurIPS, ICLR, AISTATS, and ICML. Please state the original venue and cite the
+          full paper. Accepted abstracts are presented as a talk (8 min + 2 min Q&amp;A) and a poster.
         </p>
       </li>
       <li>
-        <h3>Tutorials, demos, libraries &amp; datasets</h3>
+        <h3>Tutorials, demos, software libraries &amp; datasets</h3>
         <p>
-          Descriptions of interactive tutorials/demos (such as Jupyter notebooks), libraries/packages or
-          datasets showcasing the implementation of papers, architectures, relevant software libraries or
-          datasets. For a demo pitch (2 min) and presentation during the poster session.
+          Descriptions of interactive tutorials or demos (such as Jupyter notebooks), libraries and
+          packages, or datasets that show how constrained learning methods, architectures, or papers are
+          implemented in practice. Accepted contributions are presented as a 2-minute lightning pitch and
+          a demo during the poster session.
         </p>
       </li>
     </ol>
 
     <h3>Review process</h3>
     <p>
-      Submissions are reviewed single-blind by the Program Committee, with at least two reviews
-      and one meta-review per submission.
+      Submissions are reviewed single-blind by the Program Committee, with at least two reviews and one
+      meta-review each. Since the number of talk slots is limited, some contributions may be presented as
+      posters only.
     </p>
 
     <h3>How to submit</h3>
     <p>
-      Submissions are handled through {{ site.submission.platform }}.
+      Submissions are due <strong>October 30, 2026</strong> and are handled through {{ site.submission.platform }}.
       {% if site.submission.url != "" %}
         <a href="{{ site.submission.url }}">Submit your contribution here.</a>
       {% else %}
