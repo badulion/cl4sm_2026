@@ -112,16 +112,11 @@ layout: default
 
     <h3>How to submit</h3>
     <p>
-      Submissions are due <strong>October 30, 2026</strong> and are handled through {{ site.submission.platform }}.
-      {% if site.submission.url != "" %}
-        <a href="{{ site.submission.url }}">Submit your contribution here.</a>
-      {% else %}
-        The submission link will be announced here soon.
-      {% endif %}
+      Prepare your contribution as a PDF using the <a href="{{ site.submission.template_url }}">PMLR template</a>,
+      and submit it via <a href="{{ site.submission.url }}">{{ site.submission.platform }}</a> by
+      <strong>October 30, 2026</strong> (23:59 AoE). The session is non-archival.
+      If you have any questions, <a href="{{ site.contact_url }}">contact the organisers</a>.
     </p>
-    {% if site.submission.template_url != "" %}
-      <p><a class="btn" href="{{ site.submission.template_url }}">Download the template</a></p>
-    {% endif %}
   </div>
 </section>
 
@@ -131,7 +126,7 @@ layout: default
     <ul class="timeline">
       {% for d in site.data.dates %}
       <li class="timeline__item{% if d.highlight %} timeline__item--highlight{% endif %}"{% if d.date and d.date != "" %} data-date="{{ d.date | date: "%Y-%m-%d" }}"{% endif %}>
-        <span class="timeline__date">{% if d.date and d.date != "" %}{{ d.date }}{% else %}{{ d.approx }} <span class="tba">(exact date TBA)</span>{% endif %}</span>
+        <span class="timeline__date">{% if d.date and d.date != "" %}{{ d.date }}{% if d.tz %} <span class="tba">({{ d.tz }})</span>{% endif %}{% else %}{{ d.approx }} <span class="tba">(exact date TBA)</span>{% endif %}</span>
         <span class="timeline__event">{{ d.event }}</span>
       </li>
       {% endfor %}

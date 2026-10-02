@@ -9,6 +9,7 @@
     <p class="footer__meta">
       {{ site.title }} · {{ site.event.host }} · {{ site.event.date }}
       {% if site.contact_email != "" %} · <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>{% endif %}
+      {% if site.contact_url != "" %} · <a href="{{ site.contact_url }}">Contact</a>{% endif %}
     </p>
   </div>
 </footer>

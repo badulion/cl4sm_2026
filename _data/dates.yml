@@ -3,13 +3,13 @@
   date: "October 1, 2026"
 - event: Submission deadline
   date: "October 30, 2026"
+  tz: "AoE"
   approx: "Late October 2026"
 - event: Notification to authors
   date: "November 12, 2026"
   approx: "Mid-November 2026"
 - event: Final programme
-  date: ""
-  approx: "Late November 2026"
+  date: "November 27, 2026"
 - event: Session
   date: "December 8, 2026"
   highlight: true
