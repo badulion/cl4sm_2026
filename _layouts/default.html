@@ -43,7 +43,7 @@
       a.addEventListener('click', function () { document.getElementById('nav-toggle').checked = false; });
     });
 
-    // Timeline progress: fill passed dates and grow the line up to today.
+    // Timeline progress: fill passed dates; the line runs to halfway towards the next date.
     (function () {
       var items = Array.prototype.slice.call(document.querySelectorAll('.timeline__item'));
       if (!items.length) return;
@@ -59,13 +59,11 @@
         if (a < 0 || b >= t.length) return NaN;
         return t[a] + (t[b] - t[a]) * (i - a) / (b - a);
       });
+      var passed = t.map(function (v) { return now >= v; });
       items.forEach(function (li, i) {
-        if (now >= t[i]) li.classList.add('timeline__item--passed');
-        if (i + 1 < items.length) {
-          var f = (now - t[i]) / (t[i + 1] - t[i]);
-          f = isNaN(f) ? 0 : Math.max(0, Math.min(1, f));
-          li.style.setProperty('--fill', (f * 100) + '%');
-        }
+        if (passed[i]) li.classList.add('timeline__item--passed');
+        var f = passed[i + 1] ? 100 : passed[i] ? 50 : 0;
+        li.style.setProperty('--fill', f + '%');
       });
     })();
   </script>
