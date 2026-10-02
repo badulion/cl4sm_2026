@@ -3,7 +3,7 @@ layout: default
 ---
 
 <section class="hero">
-  <div class="container">
+  <div class="container narrow">
     <h1 class="hero__logo">
       {% include logo.html name="cl4sm-lockup" class="hero__lockup" alt="CL4SM — Constrained Learning for Scientific Modelling" width="386" height="184" %}
     </h1>
@@ -47,7 +47,7 @@ layout: default
 </section>
 
 <section id="topics" class="section section--alt">
-  <div class="container">
+  <div class="container narrow">
     <h2>Topics of Interest</h2>
     <div class="cards">
       {% for topic in site.data.topics %}
@@ -171,7 +171,7 @@ layout: default
 </section>
 
 <section id="speakers" class="section">
-  <div class="container">
+  <div class="container narrow">
     <h2>Invited Speaker</h2>
     <div class="people people--speakers">
       {% for p in site.data.speakers %}{% include person.html person=p %}{% endfor %}
@@ -181,7 +181,7 @@ layout: default
 </section>
 
 <section id="organizers" class="section section--alt">
-  <div class="container">
+  <div class="container narrow">
     <h2>Organisers</h2>
     <div class="people">
       {% for p in site.data.organizers %}{% include person.html person=p %}{% endfor %}
@@ -197,7 +197,7 @@ layout: default
 </section>
 
 <section class="logos" aria-labelledby="logos-title">
-  <div class="container">
+  <div class="container narrow">
     <h2 id="logos-title" class="logos__title">With the support of:</h2>
     <ul class="logos__list">
       {% for l in site.data.logos %}
