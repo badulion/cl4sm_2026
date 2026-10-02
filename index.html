@@ -71,25 +71,17 @@ layout: default
       and the natural and engineering sciences.
     </p>
     <p>
-      All submissions are limited to <strong>{{ site.submission.page_limit }}</strong>, and can fall into
-      one of three categories:
+      Submissions are limited to <strong>{{ site.submission.page_limit }}</strong> and fall into one of two
+      categories:
     </p>
     <ol class="tracks">
       <li>
-        <h3>Extended abstracts on ongoing work</h3>
+        <h3>Ongoing work</h3>
         <p>
           New methods, theoretical results, benchmarks, or applications that are still in progress.
           Early-stage ideas and negative results that shed light on the trade-offs between accuracy,
           guarantees, and cost are explicitly welcome. Accepted abstracts are presented as a talk
           (8 min + 2 min Q&amp;A) and a poster.
-        </p>
-      </li>
-      <li>
-        <h3>Extended abstracts of recently published papers</h3>
-        <p>
-          Summaries of work recently published at top-tier conferences and journals such as JMLR, JAIR,
-          MLJ, PAMI, IJCAI, NeurIPS, ICLR, AISTATS, and ICML. Please state the original venue and cite the
-          full paper. Accepted abstracts are presented as a talk (8 min + 2 min Q&amp;A) and a poster.
         </p>
       </li>
       <li>
@@ -102,6 +94,13 @@ layout: default
         </p>
       </li>
     </ol>
+
+    <h3>Recently published papers</h3>
+    <p>
+      We also welcome work recently published at top-tier conferences and journals such as JMLR, JAIR, MLJ,
+      PAMI, IJCAI, NeurIPS, ICLR, AISTATS, and ICML. Please state the original venue and upload the PDF of
+      the published paper. Accepted papers are presented as a talk (8 min + 2 min Q&amp;A) and a poster.
+    </p>
 
     <h3>Review process</h3>
     <p>
@@ -159,7 +158,19 @@ layout: default
   </div>
 </section>
 
-<section id="speakers" class="section section--alt">
+<section id="venue" class="section section--alt">
+  <div class="container narrow">
+    <h2>Venue</h2>
+    <p>
+      <strong>{{ site.event.venue.name }}</strong><br>
+      {{ site.event.venue.address }}<br>
+      <a href="{{ site.event.venue.map_url }}">Open in map</a>
+    </p>
+    <p>The ELLIS UnConference takes place in Paris just before NeurIPS 2026.</p>
+  </div>
+</section>
+
+<section id="speakers" class="section">
   <div class="container">
     <h2>Invited Speaker</h2>
     <div class="people people--speakers">
@@ -169,7 +180,7 @@ layout: default
   </div>
 </section>
 
-<section id="organizers" class="section">
+<section id="organizers" class="section section--alt">
   <div class="container">
     <h2>Organisers</h2>
     <div class="people">
@@ -180,6 +191,17 @@ layout: default
     <ul class="pc">
       {% for m in site.data.pc %}
       <li><span class="pc__name">{{ m.name }}</span><span class="pc__aff">{{ m.affiliation }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="logos" aria-labelledby="logos-title">
+  <div class="container">
+    <h2 id="logos-title" class="logos__title">With the support of:</h2>
+    <ul class="logos__list">
+      {% for l in site.data.logos %}
+      <li><a href="{{ l.url }}" title="{{ l.name }}"><img src="{{ '/assets/img/institutions/' | append: l.file | relative_url }}" alt="{{ l.name }}" loading="lazy"{% if l.height %} style="--h: {{ l.height }}px"{% endif %}></a></li>
       {% endfor %}
     </ul>
   </div>

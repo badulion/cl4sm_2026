@@ -15,7 +15,11 @@ baseurl: "/cl4sm_2026"
 event:
   host: "ELLIS"                 # e.g. "ELLIS UnConference 2026" — TBA
   date: "December 8, 2026"
-  location: "TBA"               # city / venue
+  location: "Paris"             # short form, shown in the hero
+  venue:
+    name: "Palais des Congrès de Paris"
+    address: "2 Place de la Porte Maillot, 75017 Paris"
+    map_url: "https://www.google.com/maps/search/?api=1&query=Palais+des+Congr%C3%A8s+de+Paris"
   start_time: ""                # local session start, "HH:MM" (e.g. "14:00"); empty = show relative times
 
 # Submission

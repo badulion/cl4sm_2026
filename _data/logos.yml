@@ -1,0 +1,48 @@
+# Logos in the "With the support of" strip at the end of the page (files in assets/img/institutions/).
+- name: ELLIS – European Laboratory for Learning and Intelligent Systems
+  file: ELLIS.png
+  url: https://ellis.eu
+- name: Helmut Schmidt University
+  file: hsu.svg
+  url: https://www.hsu-hh.de
+- name: HSU-AI Institute for Artificial Intelligence
+  file: hsu-ai.png
+  url: https://www.hsu-hh.de/iai/en/
+- name: University of Würzburg
+  file: uniwue.svg
+  url: https://www.uni-wuerzburg.de
+- name: CAIDAS – Center for Artificial Intelligence and Data Science
+  file: CAIDAS.svg
+  url: https://www.caidas.uni-wuerzburg.de
+- name: University of Minho
+  file: minho.png
+  height: 84            # the image has a wide empty margin
+  url: https://www.uminho.pt
+- name: CMAT – Centre of Mathematics, University of Minho
+  file: cmat.svg
+  url: https://cmat.uminho.pt
+- name: Faculty of Engineering, University of Porto (FEUP)
+  file: feup.jpeg
+  url: https://www.fe.up.pt
+- name: CEFT – Transport Phenomena Research Center
+  file: CEFT.png
+  url: https://ceft.fe.up.pt
+- name: ALiCE – Associate Laboratory in Chemical Engineering
+  file: alice.png
+  url: https://alice.fe.up.pt
+- name: University of Toronto
+  file: toronto.svg
+  height: 70            # the image has a wide empty margin
+  url: https://www.utoronto.ca
+- name: Funded by the European Union – NextGenerationEU
+  file: EU.png
+  url: https://next-generation-eu.europa.eu
+- name: dtec.bw – Digitalization and Technology Research Center of the Bundeswehr
+  file: dtec_bw.svg
+  url: https://dtecbw.de
+- name: FCT – Fundação para a Ciência e a Tecnologia
+  file: fct.jpg
+  url: https://www.fct.pt
+- name: República Portuguesa – Government of Portugal
+  file: portugal.svg
+  url: https://www.portugal.gov.pt
