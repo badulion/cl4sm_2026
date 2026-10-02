@@ -21,7 +21,7 @@ event:
 # Submission
 submission:
   platform: "Microsoft CMT"
-  url: ""                       # CMT submission link — empty shows "TBA"
+  url: "https://cmt3.research.microsoft.com/CLSM2026"   # CMT submission link — empty shows "TBA"
   template_url: ""              # LaTeX template link — empty hides the button
   page_limit: "2 pages (including references)"
 
