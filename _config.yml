@@ -29,6 +29,8 @@ submission:
   template_url: "https://proceedings.mlr.press/faq.html"   # LaTeX template link — empty hides the button
   page_limit: "2 pages (including references)"
 
+pc_notice: "🚧 This list is still under construction."   # shown under the Program Committee heading — empty hides it
+
 contact_email: ""               # shown in the footer if set
 contact_url: "https://cmt3.research.microsoft.com/CLSM2026/Email/Chairs"   # "Contact" link in the footer
 

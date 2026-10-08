@@ -206,6 +206,7 @@ layout: default
     </div>
 
     <h2 id="pc" class="pc-heading">Program Committee</h2>
+    {% if site.pc_notice and site.pc_notice != "" %}<p class="muted">{{ site.pc_notice }}</p>{% endif %}
     <ul class="pc">
       {% for m in site.data.pc %}
       <li><span class="pc__name">{{ m.name }}</span><span class="pc__aff">{{ m.affiliation }}</span></li>

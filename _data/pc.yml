@@ -1,4 +1,3 @@
-- name: "🚧 This list is still under construction."
 - name: George Stepaniants
   affiliation: California Institute of Technology, USA
 - name: Artur Liebert
@@ -7,3 +6,7 @@
   affiliation: HSU-AI, Helmut Schmidt University, Hamburg, Germany
 - name: Robin Kurth
   affiliation: HSU-AI, Helmut Schmidt University, Hamburg, Germany
+- name: Simon Hentschel
+  affiliation: CAIDAS, University of Würzburg, Germany
+- name: Florian Gallusser
+  affiliation: CAIDAS, University of Würzburg, Germany
