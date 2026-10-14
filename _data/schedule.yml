@@ -1,4 +1,6 @@
-# `start` is minutes after the session begins.
+# `start` is minutes after the session begins; `duration` is in minutes.
+# Use `at: "HH:MM"` instead for items at a fixed clock time, independent
+# of the session slot (e.g. the poster session).
 - start: 0
   duration: 5
   activity: Opening remarks by the organisers
@@ -18,6 +20,5 @@
 - start: 110
   duration: 10
   activity: Open discussion & invitation to the poster session
-- start: 120
+- at: "16:30"
   activity: Poster & demo session
-  detail: End of the day

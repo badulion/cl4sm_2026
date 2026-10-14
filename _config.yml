@@ -20,7 +20,7 @@ event:
     name: "Palais des Congrès de Paris"
     address: "2 Place de la Porte Maillot, 75017 Paris"
     map_url: "https://www.google.com/maps/search/?api=1&query=Palais+des+Congr%C3%A8s+de+Paris"
-  start_time: ""                # local session start, "HH:MM" (e.g. "14:00"); empty = show relative times
+  start_time: "10:30"           # local session start, "HH:MM" (e.g. "14:00"); empty = show relative times
 
 # Submission
 submission:

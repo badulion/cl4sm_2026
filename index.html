@@ -163,7 +163,7 @@ layout: default
         {% for s in site.data.schedule %}
         <tr{% if s.keynote %} class="schedule__keynote"{% endif %}>
           <td class="schedule__time">
-            {% include clock.html min=s.start %}{% if s.duration %}–{% assign end = s.start | plus: s.duration %}{% include clock.html min=end %}{% endif %}
+            {% if s.at %}{{ s.at }}{% else %}{% include clock.html min=s.start %}{% if s.duration %}–{% assign end = s.start | plus: s.duration %}{% include clock.html min=end %}{% endif %}{% endif %}
           </td>
           <td>
             <div class="schedule__activity">{{ s.activity }}</div>

@@ -8,7 +8,7 @@ Single-page Jekyll site for the ELLIS session (December 8, 2026), built for GitH
 |---|---|
 | Event host/location, session start time, CMT link, template link, contact email | `_config.yml` |
 | Important dates (fill in `date`; until then `approx` + "TBA" is shown) | `_data/dates.yml` |
-| Schedule (minutes from session start; real clock times appear once `event.start_time` is set) | `_data/schedule.yml` |
+| Schedule (`start`/`duration` in minutes from session start, resolved against `event.start_time`; or `at: "HH:MM"` for fixed-time items) | `_data/schedule.yml` |
 | Topics | `_data/topics.yml` |
 | Keynote speaker / organisers / Program Committee | `_data/speakers.yml`, `_data/organizers.yml`, `_data/pc.yml` |
 | Page text (About, Call for Contributions) | `index.html` |
