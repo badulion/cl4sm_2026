@@ -6,7 +6,7 @@
   activity: Opening remarks by the organisers
 - start: 5
   duration: 30
-  activity: "Invited keynote: TBA"
+  activity: "Invited keynote: Dr. Christopher Straub"
   detail: 25 min talk + 5 min Q&A
   keynote: true
 - start: 35
@@ -19,6 +19,6 @@
   detail: 5–7 × 2 min
 - start: 110
   duration: 10
-  activity: Open discussion & invitation to the poster session
+  activity: Open discussion & closing remarks
 - at: "16:30"
   activity: Poster & demo session

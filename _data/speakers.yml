@@ -1,7 +1,11 @@
-# Keynote speaker to be announced. To show one, delete the [] line and uncomment the entry below.
-[]
-# - name: Olga Fink
-#   affiliation: Intelligent Maintenance and Operations Systems, EPFL, Switzerland
-#   role: Keynote speaker
-#   url: https://people.epfl.ch/olga.fink
-#   photo: ""   # e.g. assets/img/fink.jpg
+# Keynote speaker. Set to [] to show the "to be announced" notice instead.
+- name: Dr. Christopher Straub
+  affiliation: AI-augmented Simulation group, Fraunhofer IISB, Erlangen, Germany
+  role: Keynote speaker
+  url: https://christopher-straub.com/
+  photo: assets/img/speakers/straub.png
+  bio: >-
+    Senior Scientist at Fraunhofer IISB in Erlangen, leading Scientific Machine
+    Learning research — physics-informed neural networks, neural operators and PDE
+    foundation models — applied to semiconductor process simulation, lithography and
+    battery modelling. PhD in mathematics (2024) on PDEs arising in galactic dynamics.
