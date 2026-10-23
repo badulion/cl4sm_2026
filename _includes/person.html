@@ -2,20 +2,26 @@
 {% assign parts = p.name | split: " " %}
 {% assign first = parts | first | slice: 0 %}
 {% assign last = parts | last | slice: 0 %}
-<div class="person{% if p.bio and p.bio != "" %} person--bio{% endif %}">
-  {% if p.photo and p.photo != "" %}
+{%- comment -%} One link target drives both the photo and the name, so they cannot diverge. {%- endcomment -%}
+{%- assign link = "" -%}{%- if p.url and p.url != "" -%}{%- assign link = p.url -%}{%- endif -%}
+<div class="person{% if p.bio and p.bio != "" %} person--bio{% endif %}{% if p.tba %} person--tba{% endif %}">
+  {%- capture photo -%}
+    {% if p.photo and p.photo != "" %}
     <div class="person__photo person__photo--img">
       <img src="{{ p.photo | relative_url }}" alt="{{ p.name }}" loading="lazy"{% if p.photo_zoom %} style="transform: scale({{ p.photo_zoom }}); transform-origin: {{ p.photo_focus | default: '50% 50%' }}"{% endif %}>
     </div>
-  {% else %}
-    <div class="person__photo person__photo--initials" aria-hidden="true">{{ first }}{{ last }}</div>
-  {% endif %}
+    {% else %}
+    <div class="person__photo person__photo--initials" aria-hidden="true">{% if p.tba %}?{% else %}{{ first }}{{ last }}{% endif %}</div>
+    {% endif %}
+  {%- endcapture -%}
+  {%- comment -%} The name links to the same target, so keep this one out of the a11y tree and tab order. {%- endcomment -%}
+  {% if link != "" %}<a class="person__photo-link" href="{{ link }}" tabindex="-1" aria-hidden="true">{{ photo }}</a>{% else %}{{ photo }}{% endif %}
   <div class="person__body">
     {% if p.role %}<div class="person__role">{{ p.role }}</div>{% endif %}
     <h3 class="person__name">
-      {% if p.url and p.url != "" %}<a href="{{ p.url }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}
+      {% if link != "" %}<a href="{{ link }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}
     </h3>
-    <p class="person__aff">{{ p.affiliation }}</p>
+    {% if p.affiliation and p.affiliation != "" %}<p class="person__aff">{{ p.affiliation }}</p>{% endif %}
     {% if p.bio and p.bio != "" %}<p class="person__bio">{{ p.bio }}</p>{% endif %}
   </div>
 </div>

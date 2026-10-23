@@ -5,14 +5,19 @@
   duration: 5
   activity: Opening remarks by the organisers
 - start: 5
-  duration: 30
+  duration: 20
   activity: "Invited keynote: Dr. Christopher Straub"
-  detail: 25 min talk + 5 min Q&A
+  detail: 15 min talk + 5 min Q&A
   keynote: true
-- start: 35
-  duration: 60
+- start: 25
+  duration: 50
   activity: Contributed talks
-  detail: 6 × 10 min (8 min + 2 min Q&A)
+  detail: 5 × 10 min (8 min + 2 min Q&A)
+- start: 75
+  duration: 20
+  activity: "Invited keynote: Prof. Dr. Benedikt Soja"
+  detail: 15 min talk + 5 min Q&A
+  keynote: true
 - start: 95
   duration: 15
   activity: Lightning poster & demo pitches

@@ -5,7 +5,14 @@
   url: https://christopher-straub.com/
   photo: assets/img/speakers/straub.png
   bio: >-
-    Senior Scientist at Fraunhofer IISB in Erlangen, leading Scientific Machine
-    Learning research — physics-informed neural networks, neural operators and PDE
-    foundation models — applied to semiconductor process simulation, lithography and
-    battery modelling. PhD in mathematics (2024) on PDEs arising in galactic dynamics.
+    Senior Scientist at Fraunhofer IISB in Erlangen, leading applied research activities on Scientific Machine Learning – physics-informed neural networks, neural operators, and PDE foundation models – for industrial applications including semiconductor process simulation, optical lithography, and battery modelling. PhD in mathematics (2024) on PDEs arising in galactic dynamics.
+- name: Prof. Dr. Benedikt Soja
+  affiliation: Department of Civil, Environmental and Geomatic Engineering, ETH Zürich, Switzerland
+  role: Keynote speaker
+  url: https://baug.ethz.ch/departement/personen/professoren/personen-detail.soja.html
+  photo: assets/img/speakers/soja.jpg
+  bio: >-
+    Professor of Space Geodesy at ETH Zürich. His group's work centres on
+    physics-informed and uncertainty-aware AI for geodesy, using it to model
+    atmospheric water vapour and ionospheric electron content and to link
+    long-term mass variations to changes in Earth's rotation.

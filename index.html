@@ -190,7 +190,7 @@ layout: default
 
 <section id="speakers" class="section">
   <div class="container narrow">
-    <h2>Invited Speaker</h2>
+    <h2>Invited Speaker{% if site.data.speakers.size > 1 %}s{% endif %}</h2>
     <div class="people people--speakers">
       {% for p in site.data.speakers %}{% include person.html person=p %}{% endfor %}
     </div>

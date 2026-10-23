@@ -223,6 +223,11 @@ p { margin: 0 0 1em; }
 .person__bio { margin: .6rem 0 0; font-size: .9rem; line-height: 1.6; }
 .person--bio { align-items: flex-start; }
 .people--speakers { grid-template-columns: 1fr; }   /* keynote card spans the full width */
+.person--tba .person__photo--initials { background: var(--bg-alt); color: var(--muted); }
+.person--tba .person__name { color: var(--muted); font-weight: 600; }
+.person__photo-link { display: block; flex-shrink: 0; border-radius: 50%; }
+.person__photo-link:hover .person__photo--img { box-shadow: 0 0 0 2px var(--accent); }
+.person__photo-link:hover .person__photo--initials { background: var(--accent-soft); }
 .people--speakers .person__photo { width: 96px; height: 96px; }
 
 .pc-heading { margin-top: 3.5rem; }
