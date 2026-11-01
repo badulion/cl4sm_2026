@@ -117,6 +117,10 @@ p { margin: 0 0 1em; }
   color: var(--accent); font-weight: 600; font-size: .9rem;
   text-transform: uppercase; letter-spacing: .1em; margin-bottom: 1rem;
 }
+.hero__notice {
+  display: inline-block; margin: 0 0 1.5rem; padding: .45rem .9rem; border-radius: 999px;
+  background: var(--accent-soft); color: var(--text); font-size: .95rem;
+}
 .hero__lead { font-size: 1.2rem; color: var(--muted); max-width: 60ch; margin-bottom: 2rem; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: .8rem; }
 
@@ -164,7 +168,7 @@ p { margin: 0 0 1em; }
 .tl__dot { justify-self: center; width: 14px; height: 14px; border-radius: 50%; background: var(--surface); border: 3px solid var(--tl-future); }
 .tl__text { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 10px; }
 .tl__date { font-size: 15px; font-weight: 700; color: var(--muted); white-space: nowrap; }
-.tl__tz { font-size: 12px; font-weight: 500; color: var(--muted); }
+.tl__was { font-weight: 500; color: var(--tl-faint); }
 .tl__label { font-size: 14px; font-weight: 500; color: var(--tl-faint); }
 .tl__item--passed .tl__dot { background: var(--accent); border-color: var(--accent); }
 .tl__item--passed .tl__date { color: var(--text); }

@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+{% assign deadline = site.data.dates | where: "event", "Submission deadline" | first %}
 
 <section class="hero">
   <div class="container narrow">
@@ -12,6 +13,11 @@ layout: default
       The first edition of CL4SM, a session at the ELLIS UnConference 2026 on enforcing physical laws and
       other known constraints in machine learning models of scientific and engineering systems.
     </p>
+    {% if deadline.was %}
+    <p class="hero__notice" data-until="{{ deadline.date | date: "%Y-%m-%d" }}">
+      Submission deadline extended to <strong>{{ deadline.date }}</strong> ({{ deadline.tz }})
+    </p>
+    {% endif %}
     <div class="hero__actions">
       <a class="btn btn--primary" href="#call">Call for Contributions</a>
       {% if site.submission.url != "" %}
@@ -113,7 +119,7 @@ layout: default
     <p>
       Prepare your contribution as a PDF using the <a href="{{ site.submission.template_url }}">PMLR template</a>,
       and submit it via <a href="{{ site.submission.url }}">{{ site.submission.platform }}</a> by
-      <strong>October 30, 2026</strong> (23:59 AoE). The session is non-archival.
+      <strong>{{ deadline.date }}</strong> (23:59 {{ deadline.tz }}). The session is non-archival.
       If you have any questions, <a href="{{ site.contact_url }}">contact the organisers</a>.
     </p>
   </div>
@@ -122,6 +128,7 @@ layout: default
 <section id="dates" class="section section--alt">
   <div class="container narrow">
     <h2>Important Dates</h2>
+    <p class="muted">All deadlines are 23:59 Anywhere on Earth (AoE, UTC−12).</p>
     <ol class="tl">
       {% for d in site.data.dates %}
       {% assign dated = false %}{% if d.date and d.date != "" %}{% assign dated = true %}{% endif %}
@@ -129,7 +136,7 @@ layout: default
         <div class="tl__row">
           <span class="tl__dot" aria-hidden="true"></span>
           <div class="tl__text">
-            <span class="tl__date">{% if dated %}{{ d.date | date: "%b %-d" }}{% if d.tz %} <span class="tl__tz">{{ d.tz }}</span>{% endif %}{% else %}{{ d.approx }}{% endif %}</span>
+            <span class="tl__date">{% if dated %}{% if d.was %}<del class="tl__was">{{ d.was | date: "%b %-d" }}</del> {% endif %}{{ d.date | date: "%b %-d" }}{% else %}{{ d.approx }}{% endif %}</span>
             <span class="tl__label">{{ d.event }}</span>
           </div>
         </div>

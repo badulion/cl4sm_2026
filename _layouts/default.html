@@ -44,6 +44,11 @@
       a.addEventListener('click', function () { document.getElementById('nav-toggle').checked = false; });
     });
 
+    // Hide notices once their date is over everywhere (end of day AoE, UTC-12).
+    document.querySelectorAll('[data-until]').forEach(function (el) {
+      if (Date.now() >= Date.parse(el.dataset.until + 'T23:59:59-12:00')) el.hidden = true;
+    });
+
     // Important dates: mark passed and next milestones; fill the current stretch by elapsed time.
     (function () {
       var items = Array.prototype.slice.call(document.querySelectorAll('.tl__item'));

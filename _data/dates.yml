@@ -1,10 +1,12 @@
 # Set `date` when fixed; until then `approx` is shown.
+# `was` keeps a superseded date, shown struck through next to the new one.
 # `phase` names the stretch from this date to the next one.
 - event: Call for contributions
   date: "October 1, 2026"
   phase: Submissions open
 - event: Submission deadline
-  date: "October 30, 2026"
+  date: "November 5, 2026"
+  was: "October 30, 2026"
   tz: "AoE"
   approx: "Late October 2026"
   phase: Under review
